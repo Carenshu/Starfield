@@ -4,7 +4,8 @@ void setup()
 {
 	//your code here
 	size(512, 512);
-	particle= new NormalParticle[50];
+	background(0);
+	particle= new NormalParticle[100];
 	for (int i =0; i< particle.length; i++)
 	{
 		particle[i]= new NormalParticle();
@@ -14,7 +15,7 @@ void setup()
 void draw()
 {
 	//your code here
-	background(0);
+	
 	for (int i =0; i< particle.length; i++)
 	{
 		particle[i].show();
@@ -33,11 +34,18 @@ class NormalParticle
 	NormalParticle()
 	{
         colour=(int)(Math.random()*255);
+        x=256;
+        y=256;
+        angle=(Math.random()*(2*Math.PI));
+       
 	}
 	void move()
 	{
+
+        speed= (double)((Math.random()*100)-50);
 		x=(Math.cos(angle)*speed)+x;
 		y=(Math.sin(angle)*speed)+y;
+
 	}
 	void show ()
 	{
@@ -61,5 +69,4 @@ class JumboParticle //uses inheritance
 {
 	//your code here
 }
-
 
