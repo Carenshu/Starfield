@@ -4,7 +4,7 @@ void setup()
 {
 	//your code here
 	size(512, 512);
-	background(0);
+	
 	particle= new NormalParticle[100];
 	for (int i =0; i< particle.length; i++)
 	{
@@ -15,13 +15,12 @@ void setup()
 void draw()
 {
 	//your code here
-	
+	background(0);
 	for (int i =0; i< particle.length; i++)
 	{
 		particle[i].show();
 		particle[i].move();
 	}
-
 
 }
 class NormalParticle
@@ -31,9 +30,11 @@ class NormalParticle
 
 	int colour;
 	
+
 	NormalParticle()
 	{
-        colour=(int)(Math.random()*255);
+        //colour=(int)((Math.random()*255));
+        //println("colour: "+colour);
         x=256;
         y=256;
         angle=(Math.random()*(2*Math.PI));
@@ -49,6 +50,7 @@ class NormalParticle
 	}
 	void show ()
 	{
+		colour=(int)((Math.random()*255));
 		fill(colour,colour,colour);
 		
 		ellipse((float)x, (float)y, 5, 5);
@@ -69,4 +71,5 @@ class JumboParticle //uses inheritance
 {
 	//your code here
 }
+
 
