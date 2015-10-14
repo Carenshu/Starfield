@@ -51,7 +51,7 @@ class NormalParticle
 	void show ()
 	{
 		colour=(int)((Math.random()*255));
-		fill(colour,colour,colour);
+		fill((int)((Math.random()*255)),(int)((Math.random()*255)),(int)((Math.random()*255)));
 		
 		ellipse((float)x, (float)y, 5, 5);
 	}
