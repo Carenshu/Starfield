@@ -1,5 +1,5 @@
 //your code here
-Particle [] particle;
+particle [] particle;
 void setup()
 {
         //your code here
@@ -67,21 +67,31 @@ interface Particle
 class Oddball implements Particle //uses an interface
 {
         //your code here
+        
+        double x,y,speed,angle;
+        
+        Oddball()
+        {
+          x=256;
+        y=256;
+        angle=(Math.random()*(2*Math.PI));
+        }
+        
         public void move ()
         {
-            x+=10;
-            y-=10;
+            speed= (double)((Math.random()*100)-50);
+                x=(Math.cos(angle)*speed)+x;
+                y=(Math.sin(angle)*speed)+y;
+
             }
         public void show ()
         {
-            fill(255);
-            ellipse(x,y,23,15);
+            fill(255,0,0);
+          ellipse((float)x, (float)y, 100, 14);
             }
 }
 class JumboParticle //uses inheritance
 {
         //your code here
 }
-
-
 
